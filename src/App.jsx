@@ -101,7 +101,7 @@ function App() {
 
         {/* ✅ Resume Download Button */}
   <motion.a
-    href="../public/Sunita_Resume.pdf"
+    href="/Sunita_Resume.pdf"
     download
     whileHover={{ scale: 1.05 }}
     whileTap={{ scale: 0.95 }}
