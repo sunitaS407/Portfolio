@@ -115,7 +115,7 @@ function App() {
        {/* Right side: Image */}
        <div className="md:w-1/2 flex justify-center">
          <img
-           src="../public/sunita.jpg"
+           src="/sunita.jpg"
            alt="Sunita Saha"
            className="w-60 h-60 rounded-full border-4 border-b-white shadow-lg object-cover"
         />
