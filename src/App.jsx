@@ -60,7 +60,7 @@ function App() {
 
 
       {/* Main Content */}
-      <main className="pt-24 max-w-5xl mx-auto px-4 sm:px-6 space-y-24">
+      <main className="pt-10 sm:pt-16 md:pt-24 max-w-5xl mx-auto px-4 sm:px-6 space-y-24">
         
        {/* About */}
      <section id="about" className="flex flex-col md:flex-row items-center justify-between gap-10 pt-36 md:pt-44 pb-20">
