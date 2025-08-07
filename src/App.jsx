@@ -44,7 +44,7 @@ function App() {
       </label>
 
       {/* Mobile Menu */}
-      <div className="absolute right-0 mt-3 bg-white rounded shadow-lg p-4 w-44 space-y-3 text-sm font-medium peer-checked:flex flex-col hidden">
+      <div className="absolute right-0 top-full mt-3 bg-white rounded shadow-lg p-4 w-44 space-y-3 text-sm font-medium hidden peer-checked:flex flex-col z-50">
         <a href="#home" className="hover:text-purple-600">Home</a>
         <a href="#about" className="hover:text-purple-600">About</a>
         <a href="#skills" className="hover:text-purple-600">Skills</a>
@@ -113,7 +113,7 @@ function App() {
 
 
        {/* Right side: Image */}
-       <div className="md:w-1/2 flex justify-center">
+       <div className="md:w-1/2 flex justify-center items-start pt-2 md:pt-0">
          <img
            src="/sunita.jpg"
            alt="Sunita Saha"
