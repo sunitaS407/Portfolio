@@ -2,11 +2,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 
-const labels = ["Very Bad", "Bad", "Average", "Good", "Very Good"];
-
 function Feedback() {
-  const [rating, setRating] = useState(0);
-
   return (
     <motion.section
       id="feedback"

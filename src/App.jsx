@@ -19,7 +19,9 @@ import {
 } from "react-icons/si";
 import Feedback from "./Feedback";
 import { TypeAnimation } from "react-type-animation";
+import Projects from ".//Projects";
 import Footer from "./Footer";
+import Certificates from "./Certificates";
 
 function App() {
   return (
@@ -87,23 +89,23 @@ function App() {
           </div>
         </div>
       </header>
-      import {motion} from "framer-motion";
+
       {/* Main Content */}
-      <main className="pt-10 sm:pt-16 md:pt-24 max-w-5xl mx-auto px-4 sm:px-6 space-y-24">
-        {/* About Section */}
+      <main className=" sm:pt-16 md:pt-24 max-w-5xl mx-auto px-4 sm:px-6 space-y-24 overflow-hidden">
+        {/* Hero Section */}
         <section
-          id="about"
-          className="flex flex-col md:flex-row items-center justify-between gap-10 pt-36 md:pt-44 pb-20"
+          id="home"
+          className="flex flex-col-reverse md:flex-row items-center justify-between gap-10 pt-36 md:pt-44 pb-20"
         >
           {/* Left Side — Text with animation */}
           <motion.div
             initial={{ opacity: 0, x: -120 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 1, type: "spring", stiffness: 60 }}
-            className="md:w-1/2 text-center md:text-left space-y-4"
+            className="md:w-1/2 text-center md:text-left space-y-1"
           >
-            <h1 className="text-4xl font-bold text-purple-700">Hello,</h1>
-            <h2 className="text-3xl font-semibold text-gray-700">
+            <h1 className="text-2xl font-bold text-purple-700">Hello,</h1>
+            <h2 className="text-xl font-semibold text-gray-700 mask-b-from-amber-50">
               I’m Sunita Saha
             </h2>
             <TypeAnimation
@@ -118,10 +120,10 @@ function App() {
               wrapper="h3"
               speed={50}
               repeat={Infinity}
-              className="text-2xl font-semibold text-gray-800"
+              className="text-lg font-semibold text-gray-800"
             />
 
-            <p className="text-lg text-gray-700 mt-4 leading-relaxed">
+            <p className="text-sm text-gray-700 mt-4 leading-relaxed">
               Creating elegant solutions through code. <br />
               Currently pursuing my passion in technology as a{" "}
               <strong>4th year student</strong> at University Institute of
@@ -129,16 +131,16 @@ function App() {
             </p>
 
             {/* Buttons */}
-            <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+            <div className="mt-4 sm:flex sm:flex-row gap-4 md:justify-start">
               <a
                 href="#projects"
-                className="px-6 py-2 bg-purple-600 text-white font-medium rounded-full shadow hover:bg-purple-700 transition"
+                className="mx-1 px-6 py-2 bg-purple-600 text-white text-sm font-medium rounded-full shadow hover:bg-purple-700 transition"
               >
                 View My Projects
               </a>
               <a
                 href="#contact"
-                className="px-6 py-2 border border-purple-600 text-purple-700 font-medium rounded-full shadow hover:bg-purple-100 transition"
+                className="mx-1 px-6 py-2 border border-purple-600 text-purple-700 text-sm font-medium rounded-full shadow hover:bg-purple-100 transition"
               >
                 Get in Touch
               </a>
@@ -150,7 +152,7 @@ function App() {
               download
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="inline-block mt-4 px-6 py-2 bg-gray-700 text-white font-medium rounded-full shadow hover:bg-indigo-950 transition"
+              className="inline-block mt-4 px-6 py-2 bg-gray-700 text-sm text-white font-medium rounded-full shadow hover:bg-indigo-950 transition"
             >
               📄 Download Resume
             </motion.a>
@@ -166,19 +168,26 @@ function App() {
               stiffness: 60,
               delay: 0.3,
             }}
-            className="md:w-1/2 flex justify-center items-start pt-2 md:pt-0"
+            className="md:w-1/2 flex justify-center items-center relative mt-12 md:mt-0"
           >
+            {/* Animated Shape Behind Image */}
+            <motion.div
+              className="absolute w-44 h-44 sm:w-72 sm:h-72 md:w-80 md:h-80 rounded-full bg-gradient-to-br from-purple-300 via-sky-200 to-pink-200"
+              animate={{ rotate: [0, 5, -5, 0], scale: [1, 1.05, 1] }}
+              transition={{ repeat: Infinity, duration: 6, ease: "easeInOut" }}
+              style={{ zIndex: 0 }}
+            />
             <img
               src="/sunita.jpg"
               alt="Sunita Saha"
-              className="w-60 h-60 rounded-full border-4 border-b-white shadow-lg object-cover"
+              className="relative w-28 h-28 sm:w-56 sm:h-56 rounded-full object-cover border-4 border-b-white shadow-lg z-10"
             />
           </motion.div>
         </section>
 
         <section
           className="flex flex-col md:flex-row items-center gap-10 px-6 max-w-6xl mx-auto mt-24 relative"
-          id="about-me"
+          id="about"
         >
           {/* Left Side: Image + Icons */}
           <motion.div
@@ -380,186 +389,7 @@ function App() {
             </motion.div>
           </div>
         </section>
-
-        {/* Projects Section */}
-        <section id="projects" className="py-20 px-4">
-          {/* Heading */}
-          <motion.div
-            className="text-center"
-            initial={{ opacity: 0, y: -40 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-          >
-            <h2 className="text-xl text-purple-700 mask-b-from-neutral-50">
-              MY WORK
-            </h2>
-            <h3 className="text-4xl font-bold text-gray-800 mt-1">
-              Featured Projects
-            </h3>
-            <p className="max-w-xl mx-auto mt-4 text-gray-600">
-              Explore some of the exciting projects I've worked on, combining
-              creativity and technology across web development and AI domains.
-            </p>
-          </motion.div>
-
-          <div className="mt-12 space-y-20 max-w-5xl mx-auto">
-            {/* TrackIt Project - Clickable Image */}
-            <motion.div
-              className="flex flex-col md:flex-row items-center gap-10"
-              initial={{ opacity: 0, y: 60 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true, amount: 0.3 }}
-            >
-              <a
-                href="https://github.com/sunitaS407/TractIt"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="block"
-              >
-                <motion.img
-                  src="/trackIt.jpg"
-                  alt="TractIt — Offline Expense Tracker"
-                  className="w-[280px] sm:w-[320px] rounded-xl shadow-lg object-cover cursor-pointer"
-                  whileHover={{ scale: 0.97 }}
-                  transition={{ type: "spring", stiffness: 100 }}
-                />
-              </a>
-
-              <div className="md:w-1/2 text-left">
-                <h4 className="text-2xl font-semibold text-gray-800 mb-2">
-                  TractIt — Offline Expense Tracker
-                </h4>
-                <p className="text-gray-700 mb-3">
-                  A fully offline expense tracking application built with modern
-                  tech stacks. Features include budget management, expense
-                  categorization, data visualization, and export capabilities.
-                </p>
-                <div className="flex flex-wrap gap-2 mt-4">
-                  <span className="bg-purple-100 text-purple-800 text-sm font-medium px-3 py-1 rounded-full">
-                    React
-                  </span>
-                  <span className="bg-purple-100 text-purple-800 text-sm font-medium px-3 py-1 rounded-full">
-                    Tailwind CSS
-                  </span>
-                  <span className="bg-purple-100 text-purple-800 text-sm font-medium px-3 py-1 rounded-full">
-                    Chart.js
-                  </span>
-                </div>
-              </div>
-            </motion.div>
-
-            {/* AI-Powered Learning Platform */}
-            <motion.div
-              className="flex flex-col md:flex-row-reverse items-center gap-10"
-              initial={{ opacity: 0, y: 60 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true, amount: 0.3 }}
-            >
-              <motion.img
-                src="/ai.jpg"
-                alt="AI-Powered Learning Platform"
-                className="w-[280px] sm:w-[320px] rounded-xl shadow-lg object-cover"
-                whileHover={{ scale: 0.97 }}
-                transition={{ type: "spring", stiffness: 100 }}
-              />
-              <div className="md:w-1/2 text-left">
-                <h4 className="text-2xl font-semibold text-gray-800 mb-2">
-                  AI-Powered Learning Platform
-                </h4>
-                <p className="text-gray-700 mb-3">
-                  An intelligent learning management system that uses machine
-                  learning to personalize education pathways based on student
-                  performance and preferences.
-                </p>
-                <div className="flex flex-wrap gap-2 mt-4">
-                  <span className="bg-purple-100 text-purple-800 text-sm font-medium px-3 py-1 rounded-full">
-                    Python
-                  </span>
-                  <span className="bg-purple-100 text-purple-800 text-sm font-medium px-3 py-1 rounded-full">
-                    Flask
-                  </span>
-                  <span className="bg-purple-100 text-purple-800 text-sm font-medium px-3 py-1 rounded-full">
-                    Node.js
-                  </span>
-                  <span className="bg-purple-100 text-purple-800 text-sm font-medium px-3 py-1 rounded-full">
-                    MongoDB
-                  </span>
-                  <span className="bg-purple-100 text-purple-800 text-sm font-medium px-3 py-1 rounded-full">
-                    TensorFlow
-                  </span>
-                </div>
-              </div>
-            </motion.div>
-
-            {/* QuickBite Project */}
-            <motion.div
-              className="flex flex-col md:flex-row items-center gap-10"
-              initial={{ opacity: 0, y: 60 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true, amount: 0.3 }}
-            >
-              <motion.img
-                src="/Quickbite.jpg"
-                alt="QuickBite – Food Delivery App"
-                className="w-[280px] sm:w-[320px] rounded-xl shadow-lg object-cover"
-                whileHover={{ scale: 0.97 }}
-                transition={{ type: "spring", stiffness: 100 }}
-              />
-              <div className="md:w-1/2 text-left">
-                <h4 className="text-2xl font-semibold text-gray-800 mb-2">
-                  QuickBite – Food Delivery App
-                </h4>
-                <p className="text-gray-700 mb-3">
-                  A modern food delivery app with real-time tracking, responsive
-                  UI, and secure payment integration. Developed for smooth
-                  ordering experiences and high performance across devices.
-                </p>
-                <div className="flex flex-wrap gap-2 mt-4">
-                  <span className="bg-purple-100 text-purple-800 text-sm font-medium px-3 py-1 rounded-full">
-                    React
-                  </span>
-                  <span className="bg-purple-100 text-purple-800 text-sm font-medium px-3 py-1 rounded-full">
-                    Tailwind CSS
-                  </span>
-                  <span className="bg-purple-100 text-purple-800 text-sm font-medium px-3 py-1 rounded-full">
-                    Node.js
-                  </span>
-                  <span className="bg-purple-100 text-purple-800 text-sm font-medium px-3 py-1 rounded-full">
-                    MongoDB
-                  </span>
-                  <span className="bg-purple-100 text-purple-800 text-sm font-medium px-3 py-1 rounded-full">
-                    Stripe
-                  </span>
-                </div>
-              </div>
-            </motion.div>
-
-            {/* View More Button */}
-            <motion.div
-              className="text-center"
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              transition={{ delay: 0.2, duration: 0.8 }}
-              viewport={{ once: true }}
-            >
-              <a
-                href="https://github.com/sunitaS407"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center text-purple-700 font-semibold text-lg hover:underline transition-all duration-300 group"
-              >
-                View more projects on GitHub
-                <span className="ml-2 transform group-hover:translate-x-1 transition-transform duration-300">
-                  →
-                </span>
-              </a>
-            </motion.div>
-          </div>
-        </section>
+        <Projects />
 
         {/* Tools & Technologies Section */}
         <motion.section
@@ -620,84 +450,12 @@ function App() {
         {/* Spacer between Certifications and Tools */}
         <div className="h-4sm:h-14"></div>
 
-        {/* Certifications Section */}
-
-        <section
-          id="certifications"
-          className="text-center py-16 bg-white/30 backdrop-blur-md px-4"
-        >
-          {/* Heading */}
-          <motion.div
-            initial={{ opacity: 0, y: -40 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-          >
-            <h2 className="text-xl text-purple-700 mask-b-from-neutral-50">
-              CERTIFICATIONS
-            </h2>
-            <h3 className="text-4xl font-bold text-gray-800 mt-1">
-              My Achievements
-            </h3>
-          </motion.div>
-
-          {/* Certificate Cards */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-10 max-w-6xl mx-auto">
-            {/* Card 1 - Clickable */}
-            <motion.a
-              href="https://drive.google.com/file/d/10VJv369P_DX2h-VLBzRLZE8EUASejOhB/view?usp=drive_link"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="bg-sky-50 rounded-xl p-6 shadow-lg hover:shadow-xl transition hover:-translate-y-1 hover:scale-105 duration-300 border border-purple-100"
-              initial={{ opacity: 0, y: 50 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.1 }}
-              viewport={{ once: true }}
-            >
-              <h4 className="text-lg font-semibold text-purple-700 mb-2">
-                Technology Job Simulation
-              </h4>
-              <p className="text-sm text-gray-600">Deloitte (Forage)</p>
-              <p className="text-xs mt-2 text-purple-500">
-                Click to view certificate
-              </p>
-            </motion.a>
-
-            {/* Card 2 */}
-            <motion.div
-              className="bg-sky-50 rounded-xl p-6 shadow-lg border border-purple-100 hover:shadow-xl transition hover:-translate-y-1 hover:scale-105 duration-300"
-              initial={{ opacity: 0, y: 50 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              viewport={{ once: true }}
-            >
-              <h4 className="text-lg font-semibold text-purple-700 mb-2">
-                Namaste React Bootcamp
-              </h4>
-            </motion.div>
-
-            {/* Card 3 */}
-            <motion.div
-              className="bg-sky-50 rounded-xl p-6 shadow-lg border border-purple-100 hover:shadow-xl transition hover:-translate-y-1 hover:scale-105 duration-300"
-              initial={{ opacity: 0, y: 50 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.3 }}
-              viewport={{ once: true }}
-            >
-              <h4 className="text-lg font-semibold text-purple-700 mb-2">
-                Data Science & ML Bootcamp
-              </h4>
-              <p className="text-sm text-gray-600">from Udemy</p>
-            </motion.div>
-          </div>
-        </section>
+        <Certificates />
 
         <Contact />
         <Feedback />
-       
       </main>
-
-       <Footer />
+      <Footer />
     </div>
   );
 }
